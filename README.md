@@ -269,4 +269,8 @@ Set necessary configuration as described in section **Run the tests**. Then swit
 ```
 py.test --cov=mmpy_bot tests\
 ```
-It automatically runs tests and measure code coverage of modules under mmpy_bot roo dir.
+It automatically runs tests and measure code coverage of modules under mmpy_bot root dir.
+Using ``--cov-report`` parameter to write report into `cov_html` by `html` format.
+```
+py.test --cov-report html:logs\cov_html --cov=mmpy_bot tests\
+```
