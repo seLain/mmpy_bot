@@ -3,6 +3,35 @@
 Testing
 ============
 
+mmpy_bot develops all tests based on pytest. If you need to add your own tests and run tests, please install pytest first.
+
+.. code-block:: bash
+
+	$ pip install -U pytest``
+
+All the tests are put in `mmpy_bot\tests`.
+There are two test packages: **unit_tests** and **behavior_tests**.
+
+Tests which can be performed by single bot without mattermost server or other bots should be kept in unit_tests package.
+Other tests requiring interactions between bots on mattermost server belong to behavior_tests package.
+
+Add unit test
+-------------
+
+There are multiple test modules inside unit_tests package.
+Each module collects tests of specific mmpy_bot class or module.
+The naming convention of these modules are *test_classname* or *test_modulename*.
+Inside each module, there will be several test functions with naming convention *test_functionname* or *test_methodname*.
+Each test function performs unit test against specific class or module.
+If you need to add more unit tests, please consider follow these conventions.
+
+Add behavior test
+-----------------
+
+The behavior tests are done by interactions between a **DriverBot** and a **TestBot**.
+
+
+
 Run all the tests:
 ------------------
 
@@ -13,14 +42,6 @@ You will need a Mattermost server to run test cases.
  * Make sure the default public channel **off-topic** exists
  * Create a private channel (ex. "test") in team **test-team**, and add **driverbot** and **testbot** into the private channel
  * Give **drivebot** ADMIN previledge on your testing server, and set **pytest_config.DRIVER_ADMIN_PRIVILEGE = True** if you like to test webhooks and other behaviors which requires admin previledge.
-
-Install PyTest in development environment.
-
-.. code-block:: bash
-
-	$ pip install -U pytest``
-
-There are two test categories in **mmpy_bot\tests**: **unit_tests** and **behavior_tests**. The **behavior_tests** is done by interactions between a **DriverBot** and a **TestBot**.
 
 To run the **behavior_tests**, you have to configure **behavior_tests\bot_settings.py** and **behavior_tests\driver_settings.py**. Example configuration:
 
