@@ -7,7 +7,7 @@ import sys
 import os
 sys.path.append(os.getcwd()) # enable importing driver_settings
 
-from tests.behavior_tests import driver_settings
+from tests.behavior_tests.bots import driver_settings
 
 
 @respond_to('^allowed_driver$')
