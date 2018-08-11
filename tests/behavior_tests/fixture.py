@@ -1,7 +1,6 @@
 import subprocess
 import pytest
 from tests.behavior_tests.bots.driver import Driver
-from tests.behavior_tests.config import pytest_config
 
 
 def _start_bot_process():

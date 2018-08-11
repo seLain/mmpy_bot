@@ -1,7 +1,5 @@
 import pytest
-from tests.behavior_tests.config import pytest_config
 from tests.behavior_tests.fixture import driver
-
 
 # [ToDo] Implement this test together with the file upload function
 @pytest.mark.skip(reason="no way of currently testing this")

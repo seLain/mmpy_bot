@@ -1,4 +1,3 @@
-import sys
 import time
 import pytest
 from mmpy_bot.utils import WorkerPool

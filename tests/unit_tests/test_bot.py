@@ -1,4 +1,3 @@
-import sys
 import pytest
 from mmpy_bot import settings
 from mmpy_bot.bot import Bot

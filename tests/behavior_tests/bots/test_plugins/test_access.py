@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from mmpy_bot.utils import allowed_users
-from mmpy_bot.bot import respond_to, listen_to
+from mmpy_bot.bot import respond_to
 
 import sys
 import os
