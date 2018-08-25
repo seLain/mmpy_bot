@@ -49,8 +49,9 @@ class Bot(object):
     def _run_jobs(self):
         logger.info('job running thread started')
         while True:
-            time.sleep(2)
-            self.run_pending()
+            period = settings.get('JOB_TRIGGER_PERIOD', 60)
+            time.sleep(period)
+            schedule.run_pending()
 
 
 class PluginsManager(object):

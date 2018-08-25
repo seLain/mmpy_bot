@@ -35,7 +35,14 @@ the used icon comes from bot settings and Icon or Emoji has no effect.
 # BOT_ICON = 'http://lorempixel.com/64/64/abstract/7/'
 # BOT_EMOJI = ':godmode:'
 
+'''
+Period to trigger jobs in sechduler. Measures in seconds.
+'''
+JOB_TRIGGER_PERIOD = 60
 
+'''
+Load local settings
+'''
 for key in os.environ:
     if key[:15] == 'MATTERMOST_BOT_':
         globals()[key[11:]] = os.environ[key]
