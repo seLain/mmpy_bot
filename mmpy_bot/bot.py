@@ -49,8 +49,7 @@ class Bot(object):
     def _run_jobs(self):
         logger.info('job running thread started')
         while True:
-            period = settings.get('JOB_TRIGGER_PERIOD', 60)
-            time.sleep(period)
+            time.sleep(settings.JOB_TRIGGER_PERIOD)
             schedule.run_pending()
 
 

@@ -184,4 +184,4 @@ This job will be trigger at `t_time`.
         schedule.once(t_time).do(message.reply, content)
 
 All jobs added will be triggered periodically. 
-The trigger period can be configured by `JOB_TRIGGER_PERIOD` in settings.py or local_settings.py.
+The trigger period (default 5 seconds) can be configured by `JOB_TRIGGER_PERIOD` in settings.py or local_settings.py.
