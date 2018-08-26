@@ -18,13 +18,16 @@ class OneTimeJob(schedule.Job):
         self.next_run = next_time
 
     def run(self):
-        ret = super().run()
+        try: # py3+
+            ret = super().run()
+        except TypeError: # py2.7
+            ret = super(OneTimeJob, self).run()
         self.scheduler.cancel_job(self)
         return ret
 
 
 def _default_scheduler__once(self, trigger_time):
-    job =  OneTimeJob(0, self)
+    job = OneTimeJob(0, self)
     job.set_next_run(trigger_time)
     return job
 
