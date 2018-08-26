@@ -18,7 +18,6 @@ def my_schedule():
 
 
 def test_add_onetime_job_without_trigger_time(my_schedule):
-    run_time = datetime.now() + timedelta(seconds=2)
     my_schedule.once().do(foo, msg='hello')
     if len(my_schedule.jobs) != 1:
         raise AssertionError("Job is not added to schedule.")

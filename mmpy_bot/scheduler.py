@@ -12,7 +12,8 @@ class OneTimeJob(schedule.Job):
 
     def set_next_run(self, next_time):
         if not isinstance(next_time, datetime):
-            raise
+            raise AssertionError(
+                "The next_time parameter should be a datetime object.")
         self.at_time = next_time
         self.next_run = next_time
 
@@ -29,6 +30,9 @@ def _default_scheduler__once(self, trigger_time):
 
 
 def _once(trigger_time=datetime.now()):
+    if not isinstance(next_time, datetime):
+            raise AssertionError(
+                "The trigger_time parameter should be a datetime object.")
     return default_scheduler.once(
             self=default_scheduler,
             trigger_time=trigger_time)

@@ -37,6 +37,7 @@ the used icon comes from bot settings and Icon or Emoji has no effect.
 
 '''
 Period to trigger jobs in sechduler. Measures in seconds.
+If JOB_TRIGGER_PERIOD is not set, mmpy_bot will set default priod 60 seconds.
 '''
 JOB_TRIGGER_PERIOD = 60
 

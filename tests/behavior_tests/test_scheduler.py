@@ -1,6 +1,4 @@
-import time
 from datetime import datetime, timedelta
-import pytest
 from tests.behavior_tests.fixture import driver
 
 
